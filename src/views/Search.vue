@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
+    <HeroImage />
     <Claim />
-    <SearchInput />
+    <SearchInput v-model="searchValue" @input="handleInput"/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@ import axios from 'axios';
 import debounce from 'lodash.debounce';
 import Claim from '@/components/Claim.vue';
 import SearchInput from '@/components/SearchInput.vue';
+import HeroImage from '@/components/HeroImage.vue';
 
 const API = 'http://images-api.nasa.gov/search';
 
@@ -18,6 +20,7 @@ export default {
   components: {
     Claim,
     SearchInput,
+    HeroImage,
   },
   data() {
     return {
@@ -28,6 +31,7 @@ export default {
   methods: {
     // eslint-disable-next-line
     handleInput: debounce(function () {
+      console.log(this.searchValue);
       axios.get(`${API}?q=${this.searchValue}&media_type=image`)
         .then((response) => {
           this.results = response.data.collection.items;
@@ -43,15 +47,12 @@ export default {
   .wrapper {
     display: flex;
     height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 30px;
     justify-content: center;
     width: 100%;
-    background-image: url('../assets/astronomy-atmosphere-earth-exploration-220201.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 40% 50%;
   }
 </style>
