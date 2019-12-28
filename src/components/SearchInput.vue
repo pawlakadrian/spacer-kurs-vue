@@ -2,6 +2,7 @@
   <input
     id="search"
     name="search"
+    :class="{ dark } "
     :value="value"
     @input="handleChange"
   />
@@ -15,6 +16,10 @@ export default {
       type: String,
       requeired: true,
     },
+    dark: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     handleChange(e) {
@@ -26,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
   input {
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     width: 250px;
     color: #fff;
@@ -47,6 +52,15 @@ export default {
   input:focus {
     outline: none;
     box-shadow: 0 5px 10px -8px rgba(255,255,255, .8);
+  }
+
+  .dark {
+    color: #1e3d4a;
+    border-bottom-color: #1e3d4a;
+  }
+
+  .dark::focus {
+    box-shadow: 0 10px 20px -8px rgba(#1e3d4a, .2);
   }
 
 </style>
