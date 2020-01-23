@@ -1,7 +1,13 @@
-// vue.config.js
+// // vue.config.js
+// module.exports = {
+//   // options...
+//   devServer: {
+//     proxy: 'http://images-api.nasa.gov/search?q=&media_type=image',
+//   }
+// }
+
 module.exports = {
-  // options...
-  devServer: {
-    proxy: 'http://images-api.nasa.gov/search?q=&media_type=image',
-  }
-}
+  publicPath: './',
+};
+
+

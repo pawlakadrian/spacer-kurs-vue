@@ -21,7 +21,7 @@ export default {
   props: {
     item: {
       type: Object,
-      requeired: true,
+      required: true,
     },
   },
   data() {

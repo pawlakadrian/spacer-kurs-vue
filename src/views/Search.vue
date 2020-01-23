@@ -26,7 +26,7 @@ import HeroImage from '@/components/HeroImage.vue';
 import Item from '@/components/Item.vue';
 import Modal from '@/components/Modal.vue';
 
-const API = 'http://images-api.nasa.gov/search';
+const API = 'https://api.allorigins.win/raw?url=http://images-api.nasa.gov/search';
 
 export default {
   name: 'Search',

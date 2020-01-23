@@ -14,7 +14,7 @@ export default {
   props: {
     value: {
       type: String,
-      requeired: true,
+      required: true,
     },
     dark: {
       type: Boolean,
